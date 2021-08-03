@@ -81,5 +81,7 @@ header {width:100%;margin:0 auto;text-align:center;position:fixed;}
 .sorting_wrap li { float:left; background-color:#fbd14b;flex:1; padding:10px 0; }
 .sorting_wrap li:nth-of-type(odd) { background-color:rgba(251, 209, 75, 0.5); }
 .sorting_wrap li button { font-size:14px; }
-.container { max-width:1280px; height:1800px;margin:0 auto;background-color:#fff; }
+.container { max-width:1280px; height:1800px; background-color:#fff;padding:180px 0 0;}
+.container th { font-size:16px; }
+.container td { font-size:14px; }
 /*common end*/

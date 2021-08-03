@@ -3,9 +3,13 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	<title>minju table</title>
-	<script type="text/javascript" defer src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css">
 	<link rel="stylesheet" href="./css/common.css">
+
+	<script type="text/javascript" defer src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript" defer src="//maxcdn.bootstrapcdn.com/bootstrap/latest/js/bootstrap.min.js"></script>
 </head>
 <body>
 <div id="wrap">
@@ -51,7 +55,7 @@
 					<button>간식 외</button>
 				</li>
 			</ul>
-			<ul class="sorting_wrap">
+			<!--<ul class="sorting_wrap">
 				<li>
 					<button>카테고리</button>
 				</li>
@@ -76,19 +80,40 @@
 				<li>
 					<button>선호도 조사</button>
 				</li>
-			</ul>
+			</ul>-->
 		</div>
 	</header>
 	<div class="container">
-		<div class="ddw">
-			<ul>
-				<li></li>
-				<li></li>
-				<li></li>
-				<li></li>
-				<li></li>
-			</ul>
-		</div>
+		<table class="table table-striped">
+			<!--<caption>List of users</caption>-->
+			<thead>
+				<tr>
+					<th scope="col">카테고리</th>
+					<th scope="col">과자이름</th>
+					<th scope="col">초기 수량</th>
+					<th scope="col">재고</th>
+					<th scope="col">총 구매 가격</th>
+					<th scope="col">좋아요</th>
+					<th scope="col">싫어요</th>
+					<th scope="col">선호도 조사</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th scope="row">2</th>
+					<td>ㅁㅇㅁㅇ</td>
+					<td>ㅁㅇㅁㅇ</td>
+					<td>ㅁㅇㅁㅇ</td>
+					<td>ㅁㅇㅁㅇ</td>
+					<td>ㅁㅇㅁㅇ</td>
+					<td>ㅁㅇㅁㅇ</td>
+					<td>ㅁㅇㅁㅇ</td>
+				</tr>
+				<tr>
+					<th scope="row">1</th>
+				</tr>
+			</tbody>
+		</table>
 	</div>
 </div>
 <script>
