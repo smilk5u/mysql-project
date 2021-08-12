@@ -92,23 +92,24 @@ header h1 {width: 100%;padding:20px 0;background-color: #0f9c22;color:#fff;font-
 .sorting_wrap li:nth-of-type(odd) { background-color:rgba(251, 209, 75, 0.5); }
 .sorting_wrap li button { font-size:14px; }
 .container { max-width:1140px; padding:20px 0 0; height:1800px; background-color:#fff; }
-/*.container .table { width: 89%; }*/
-.container th { font-size:13px; /*border-right:1px solid #dee2e6; */}
-.container td { font-size:12px; /*border-right:1px solid #dee2e6;*/ }
-.container td.preference {
-    display: flex;
-    justify-content:space-between;
-    padding:0.4rem .75rem;
-}
-.container td.preference button {
-    width:45%;
-    background-color: #ccc;
-    padding:5px 0;
-    font-size: 13px;
-    display: block;
-    float:left;
 
-}
+/*.container .table { width: 89%; }*/
+.container th { font-size:13px; /*border-right:1px solid #dee2e6;*/ }
+.container td { font-size:12px;/* border-right:1px solid #dee2e6;*/ }
+.container td.preference {display: flex;justify-content:space-between;padding:0.4rem .75rem;}
+.container td.preference button {width:45%;background-color: #ccc;padding:5px 0;font-size: 13px;display: block;float:left;}
 .container td.preference button.like-btn { background-color: #ff8d8d; color:#fff; }
 .container td.preference button.dont-like-btn { background-color: #527639; color:#fff; }
+
+/*추가 div*/
+.bottom_popup { width:1140px; position:fixed; bottom:0; }
+.insert-form {width:400px;background-color:#e8e8e8;position:absolute;left:0;bottom:20px;padding:30px 50px 50px; border-radius:20px;}
+.insert-form fieldset { display:flex;flex-direction: column; }
+.insert-form select { width:100%; font-size:15px; background-color:#fff; }
+.insert-form input { width:100%; margin:5px 0 0; padding:10px 15px; background-color:#fff; font-size:14px; }
+
+
+
+
+
 /*common end*/

@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-	<title>minju table</title>
+	<title>MINJU Snack</title>
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css">
 	<link rel="stylesheet" href="./css/common.css">
 
@@ -73,32 +73,75 @@
 			</tr>
 			</thead>
 			<tbody id="tableBody">
-				<?php while ($info = mysqli_fetch_array($result)) { ?>
-					<tr>
-						<td scope="row"> <?=$info["category"]?> </td>
-						<td scope="row"> <?=$info["name"]?> </td>
-						<td scope="row"> <?=$info["total_amount"]?> 개 </td>
-						<td scope="row"> <?=$info["total_amount"]?> 개 </td>
-						<td scope="row"> <?=$info["total_price"]?> 원 </td>
-						<td scope="row"> <?=$info["good"]?> </td>
-						<td scope="row"> <?=$info["dis_like"]?> </td>
-						<td class="preference">
-						    <button class="like-btn" type="button"> 좋아요 </button>
-						    <button class="dont-like-btn" type="button"> 싫어요 </button>
-						</td>
-					</tr>
-				<?php }?>
+                <?php while ($info = mysqli_fetch_array($result)) { ?>
+                    <tr>
+                        <td scope="row"> <?=$info["category"]?> </td>
+                        <td scope="row"> <?=$info["name"]?> </td>
+                        <td scope="row"> <?=$info["total_amount"]?> 개</td>
+                        <td scope="row"> <?=$info["total_amount"]?> 개</td>
+                        <td scope="row"> <?=$info["total_price"]?> 원</td>
+                        <td scope="row"> <?=$info["good"]?> </td>
+                        <td scope="row"> <?=$info["dis_like"]?> </td>
+                        <td class="preference">
+                            <button class="like-btn" type="button"> 좋아요</button>
+                            <button class="dont-like-btn" type="button"> 싫어요</button>
+                        </td>
+                    </tr>
+                <?php }?>
 			</tbody>
 		</table>
+		<div class="bottom_popup">
+			<form id="snackInsert" class="insert-form" name="snackInsert" method="POST">
+				<fieldset>
+					<div>
+						<select name="category" id="category" class="category_select">
+							<option value="">전체</option>
+							<option value="">과자</option>
+							<option value="">사탕 / 껌</option>
+							<option value="">초콜렛</option>
+							<option value="">커피</option>
+							<option value="">시리얼</option>
+							<option value="">음료</option>
+							<option value="">아이스크림</option>
+							<option value="">간식 외</option>
+						</select>
+						<input id="snackName" type="text" name="snackName" placeholder="과자 이름을 입력하세요." required>
+						<input id="purchaseQuantity" type="number" name="purchaseQuantity" placeholder="구매 수량을 입력하세요." required>
+						<input id="snackPrice" type="number" name="snackPrice" placeholder="총 구매 가격을 입력하세요." required>
+					</div>
+					<div>
+						<input id="thereStock" type="number" name="thereStock" placeholder="3층 재고를 입력하세요." required>
+						<input id="fourStock" type="number" name="fourStock" placeholder="4층 재고를 입력하세요." required>
+						<input type="submit" value="추가" value="post" onclick="insert('post');">
+					</div>
+				</fieldset>
+			</form>
+		</div>
 	</div>
 </div>
 <script>
 
-    /*전체 클릭시*/
+	/*전체 클릭시*/
+	function insert(method) {
+	    console.log(method);
+        $.ajax({
+            type: method,
+            url : "./config.php",
+            data: $("#snackInsert").serialize(),
+            dataType:"text",
+            success : function(data, status, xhr) {
+                console.log(data);
+                console.log("추가 성공");
+            },
+            error: (jqXHR, textStatus, errorThrown) => {
+                console.log("추가 실패");
+            }
+        })
+	}
 
 
-    /*3층 클릭시*/
-    /*4층 클릭시*/
+	/*3층 클릭시*/
+	/*4층 클릭시*/
 
 </script>
 </body>
