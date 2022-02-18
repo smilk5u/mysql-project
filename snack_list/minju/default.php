@@ -16,8 +16,11 @@
    $snackArray = array();
     while( $snack = mysqli_fetch_array( $result ) ) {
         array_push( $snackArray, [
-            "category" => "$snack[category]", "name" => "$snack[name]",
-            "total_amount" => "$snack[total_amount]","total_price" => $snack["total_price"], "good" => $snack[good],
+            "unique_id" => "$snack[unique_id]",
+            "category" => "$snack[category]",
+            "name" => "$snack[name]",
+            "total_amount" => "$snack[total_amount]",
+            "total_price" => $snack["total_price"], "good" => $snack[good],
             "dis_like" => "$snack[dis_like]", "image" => $snack[image]
         ]);
     }
